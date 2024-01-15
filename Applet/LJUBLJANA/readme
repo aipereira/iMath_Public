@@ -1,0 +1,21 @@
+LJUBLJANA folder
+
+Readme
+
+1. Installation 
+ - code: concept_map_editor.py, conM_editor_tools.py, folder ConceptMaps
+ - besides standard Python libraries we need
+	dash==2.6.2
+	dash-bootstrap-components==1.2.1
+	dash-core-components==2.0.0
+	dash-cytoscape==0.3.0
+	dash-html-components==2.0.0
+	dash-table==5.0.0
+	networkx==3.1
+	pickleshare==0.7.5
+	plotly==5.10.0
+ - no dependences on not the latest versions of these libraries were observed
+ 
+2. Configuration and run:
+ - configuration: configure host and port (concept_map_editor.py, L652)
+ - run: >python concept_map_editor.py

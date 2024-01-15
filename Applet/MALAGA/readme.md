@@ -1,0 +1,107 @@
+# UMA Applet
+
+This applet is designed to serve as a visual tool for examining various critical values and provide insights into the evaluation of a concept map's quality. Inspired by research highlighting the significance of map structure in the learning process we focus on salience metrics to assess and help users enhance the effectiveness of concept maps.
+
+## Features
+
+- **Interactive Graph Rendering:** By using `dash-interactive-graphviz` we achieved a way of representing graphs in Dash allowing the user to click on the graph to get extra information about the clicked element or provide a easy way to the user to move the graph across the screen or zoom it.
+- **Custom Graphs:** Although two examples are provided and can be selected in the navbar, users might upload their own CSV data (following the format explained in the question mark button placed next to the "Upload" button) and experiment with different GraphViz layouts for their data, as well as the metrics provided.
+- **Graph and Visual Complexity Metrics:** Beyond basic graph metrics like the number of nodes or edges, the app also provides other indicators deeply tied to the graph representation. This could be accomplished by directly working with SVG structures.
+
+## Dependencies
+
+Although is recommended just rely on the requirements.txt files that we use in the ``Getting started`` section further
+down in this document, the dependencies are the following:
+
+* dash
+* dash-bootstrap-components
+* dash-interactive-graphviz
+* pandas
+* networkx
+* pygraphviz
+* svgpathtools
+* beautifulsoup4
+* lxml 
+
+## Project structure
+
+```
+.
+├── assets
+│   ├── example.svg
+│   ├── favicon.ico
+│   └── logo1.svg
+├── docker
+│   └── Dockerfile
+├── conda_requirements.txt
+├── environment.yml
+├── graph_processor.py
+├── graph_visualization.py
+├── readme.md
+├── requirements.txt
+├── web.py
+├── Example1.csv
+└── Example2.csv
+```
+
+The main files are the .py files, where the code is located. 
+
+* graph_processor.py: It includes a class with methods for manipulating and parsing a graph. 
+* graph_visualization.py: It defines a class with methods for working with a graph visualization and SVG. 
+* web.py: This is the entry point to the Dash application. 
+
+## Getting started
+
+### Using Docker
+
+A ``Dockerfile`` ready for building and run the application is provided in the Docker folder. You can also take the 
+``Dockerfile`` as a guide to run the code natively in any GNU/Linux distro using pip with apt as the package manager, 
+since you have to install the ``graphviz`` and ``graphviz-devel`` packages  
+(although it can be easily ported to any other distro with any other package manager). For its use in Windows you should
+also take into account the PyGraphviz dependency and follow the steps 
+[detailed in the PyGraphviz documentation.](https://pygraphviz.github.io/documentation/stable/install.html#windows)
+For Conda environments running the conda install command in the aforementioned documentation is enough for it installation.
+
+For building and running the ``Dockerfile`` you can run:
+
+```
+docker build -t umaapplet -f ./docker/Dockerfile .
+docker run -p 8050:8050 -t umaapplet
+```
+
+### Using Pip
+
+To install the required dependencies using pip, execute the following command:
+
+``
+pip install -r requirements.txt 
+``
+
+It's highly recommended to utilize a virtual environment when working with pip to isolate your project dependencies. 
+
+### Using Conda
+
+To create a Conda environment with the necessary requirements, use the following command:
+
+``
+conda env create -f environment.yml
+``
+
+Alternatively, if you prefer using a requirements.txt file instead of the typical YAML file for Conda environments, 
+you might create the environment with:
+
+``
+conda create --name appletenv --file conda_requirements.txt
+``
+
+You can replace "appletenv" with your preferred environment name if you would like to.
+
+
+### Running the Dash application
+
+To launch the Dash application and get the website up and running, simply execute the following command, 
+regardless of whether you are using pip or Conda:
+
+``
+python3 web.py
+``

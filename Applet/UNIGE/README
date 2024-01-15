@@ -1,0 +1,15 @@
+The applet(defined in algorithmsapplet.py) has been created to allow the students to test and became more familiar with Machine Learning fundamentals and basic algorithms.
+It consists of three tabs:
+- in the first tab(defined in appletPage1corretto.py), you can test Support Vector Machine (SVM) algorithm on a classification task. You can choose between three different datasets (Moons, Circles, 
+linearly separable) and set noise, number of samples and distance between classes, and you can tune the main model’s hyperparameters: kernel type, kernel parameter γ, 
+regularization parameter C and the approach to adopt in muti-class case (one-vs-one, one-vs-rest).
+- in the second tab(defined in appletPage2corretto.py), you can test Random Forest (RF) on a classification task. You can choose between three different datasets(Moons, 
+Circles, linearly separable) and set noise, number of samples and distance between classes, but most of all you can tune the main model’s hyperparameters: number of 
+trees in the forest and number of features to consider deciding the best split.
+- in the third tab (defined in applet_tab3.py), you could study the error double descent phenomenon when approximating a function with a polynomial regressor: test 
+error first decreases, then increases, and then decreases again, increasing model polynomial degree. The phenomenon occurs under specific conditions, but the user 
+will be able to modify the regularization parameter and polynomial degree and change the training dataset to play with the regressor and see what happens on the
+error’s curve.
+
+TO RUN:
+put all the files in the same folder, than launch algorithmsapplet.py
