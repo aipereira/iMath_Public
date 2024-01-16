@@ -1,0 +1,4 @@
+The aim of the project is to find an algorithm to propose tailored questions to students in math tests. 
+We use a combiation of three different Machine Learning techniques to choose the tests' questions: clutering(k-means), graph theory and Random Forest.
+Please refer to the Technical Report for more details on the approach.
+In this folder you can find the code of the proposed algorithm.
