@@ -1,1 +1,21 @@
+In the following, there is a brief explanation of all the files in this folder. 
+The aim of the project is to find an algorithm to propose students tailored questions in a math test. 
+We use a Random Forest to predict the probability that the user will correctly answer the next question, for all the possible questions, and we propose the user the questions which maximazes that probabilty.
+In folder CODE, you will find the following files:
+rf_TrainTest.py: the RF model is built and trained and the questions'averaged quantities are computed.
+prototype.py: this code generates a test of 5 math questions at 127.0.0.1. Each question cannot be duplicated for the same user. First question is chosen randomly since we have no history yet. The following questions are chosen by the RF based model.
+piclke files:
+user_features_df.pickle: this file contains the data of the informative questionnaire filled in by the students. You can find the detailed description of these data in the word file input_data_structure. 
+encoder_tx.pickle (where x= 2..5): the fitted encoder which must be used to encode categorical variables, one encoder for each model.
+scaler_tx.pickle (where x= 2..5):  the fitted scaler which must be used to scale numerical variables, one scaler for each model.
+featuresToCancel_t2.pickle (where x= 2..5): the list of less important features to cancel, calculated on the training and validation sets, one list for each model.
+user_features_df.pickle (where x= 2..5): these are the questionnaires compiled by the students on their background, cleaned and processed. 
 
+Moreover, in the folder you will also find the following SUPPORTING DOCUMENTATION:
+IMath_Techical_report_UNIGE: a report containing details of the approach and a preliminary evaluation of the algorithm in terms of quality of the prediction.
+input_data_structure: a file explaining data input and output structure.
+
+TO RUN:
+In order to run rf_TrainTest.py, put in the same folder the python file, new_user_data17-04.txt and keyGoogleSheet.json(to access the GoogleSheet), all in the training folder.
+In order to run prototype.py, put in the same folder: assets folder(containg images to be visualized in the prototype), rf_t2/3/4/5, scaler_t2/3/4/5, encoder_t2/3/4/5, user_features_df,featuresToCancel_t2/3/4/5 (these files are all generated from launching rf_TrainTest.py), keyGoogleSheet.json(to access the GoogleSheet). 
+In both cases, you have to install the libraries at the beginning of the files.
