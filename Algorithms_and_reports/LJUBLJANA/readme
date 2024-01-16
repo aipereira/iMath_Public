@@ -1,0 +1,6 @@
+LJUBLJANA folder
+Readme
+- libraries: besides typical libs we need networkx and random, so no requirements.txt file is added
+- to run it: >python question_generator_UL.py
+- fixed configuration of algorithm parameters are hard-coded into a dictionary 
+- when all questions are exhausted, the question code -1 is returned
