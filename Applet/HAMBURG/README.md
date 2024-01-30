@@ -41,7 +41,7 @@ The web application provides various actions, including retraining the model, te
 - The sidebar offers easy navigation options for the different actions.
 - Accuracy and loss graphs provide insights into the training progress.
 
-## Dependencies (tested)
+## Dependencies
 - Python==3.10 or 3.11
 - TensorFlow==2.15
 - Streamlit==1.29
@@ -53,6 +53,7 @@ The web application provides various actions, including retraining the model, te
 ## Installation and Execution 
 
 1- **Install the required dependencies with the command:**
+```
    conda create -n app_env python=3.10
    conda activate app_env
    pip install tensorflow==2.15
@@ -61,10 +62,12 @@ The web application provides various actions, including retraining the model, te
    pip install scikit-learn==1.3.0
    pip install matplotlib==3.7.2
    pip install Pillow==9.4.0
+```
 
 2- **Start the application with the command:** 
+```
    streamlit run app.py
-
+```
 The application will then be available at localhost:8501.
    
 **Enjoy using the Picture Recognition App!**
