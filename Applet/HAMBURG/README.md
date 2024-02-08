@@ -52,6 +52,14 @@ The web application provides various actions, including retraining the model, te
 
 ## Installation and Execution 
 
+### Using Docker
+One can use a ``Dockerfile`` in the Docker folder for building and running the application. Feel free to use the following commands for building and running the application:
+```
+docker build -t hamapplet -f ./docker/Dockerfile .
+docker run -p 8501:8501 hamapplet
+```
+
+### Using conda
 1- **Install the required dependencies with the command:**
 ```
    conda create -n app_env python=3.10
@@ -71,3 +79,6 @@ The web application provides various actions, including retraining the model, te
 The application will then be available at localhost:8501.
    
 **Enjoy using the Picture Recognition App!**
+
+
+##
